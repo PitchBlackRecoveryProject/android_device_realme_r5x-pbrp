@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_violet.mk
+    $(LOCAL_DIR)/pb_violet.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_violet-eng
+    pb_violet-eng
