@@ -22,12 +22,11 @@ env:
   SFPassword: ${{ secrets.SFPassword }}
   SFUserName: ${{ secrets.SFUserName }}
   TARGET: "pbrp"
-  #EXTRA_CMD: "Extra Commands Here"
 
 jobs:
   PBRP_CI:
     if: "(! contains(toJSON(github.event.commits.*.message), '[skip-ci]'))"
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
        - name: Auto Adapt Manifest
@@ -39,6 +38,7 @@ jobs:
               if [[ ${BUILD_RELEASE_TYPE} == "TEST" ]]; then echo "TEST_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "BETA" ]]; then echo "BETA_BUILD=true"  >> $GITHUB_ENV;fi
               if [[ ${BUILD_RELEASE_TYPE} == "OFFICIAL" ]]; then echo "PB_OFFICIAL=true"  >> $GITHUB_ENV;fi
+
        - name: Checkout Cleaning Up Runner Repo
          uses: actions/checkout@v2
          with:
@@ -48,6 +48,10 @@ jobs:
            path: .github/actions/Cleaner
        - name: Cleaning
          uses: ./.github/actions/Cleaner
+       - name: Set Swap Space
+         uses: pierotofy/set-swap-space@master
+         with:
+           swap-size-gb: 12
 
        - name: Checkout Recovery Compiler Repo
          uses: actions/checkout@v2
