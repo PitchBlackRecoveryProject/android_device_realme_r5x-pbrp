@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pb_violet.mk
+    $(LOCAL_DIR)/pb_r5x.mk
 
 COMMON_LUNCH_CHOICES := \
-    pb_violet-eng
+    pb_r5x-eng

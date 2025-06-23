@@ -8,8 +8,8 @@
 
 set -e
 
-DEVICE=violet
-VENDOR=xiaomi
+DEVICE=r5x
+VENDOR=realme
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
