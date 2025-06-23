@@ -138,6 +138,11 @@ BOARD_SUPER_PARTITION_GROUPS := r5x_dynpart
 BOARD_R5X_DYNPART_SIZE := $(shell expr $(BOARD_SUPER_PARTITION_SIZE) - 4194304 )
 BOARD_R5X_DYNPART_PARTITION_LIST := odm product system system_ext vendor
 
+# PBRP specific build flags
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
+PB_DISABLE_DEFAULT_DM_VERITY := true
+
 # Platform
 TARGET_BOARD_PLATFORM := trinket
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno610

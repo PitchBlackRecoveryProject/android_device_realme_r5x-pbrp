@@ -15,7 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_r5x.mk
+    $(LOCAL_DIR)/pb_r5x.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_r5x-eng
+    pb_r5x-eng
